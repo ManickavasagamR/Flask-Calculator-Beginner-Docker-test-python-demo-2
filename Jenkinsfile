@@ -20,6 +20,7 @@ pipeline {
     stage('Deploy')
     {
       steps {
+        sh "pip install -r requirements.txt"
         echo "deploying the application"
         sh "pwd"
         sh "hostname"
