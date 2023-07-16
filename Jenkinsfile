@@ -6,6 +6,7 @@ pipeline {
         stage('Build') {
           steps {
             sh 'echo "building the repo"'
+            sh "pip install -r requirements.txt"
           }
         }
       }
@@ -13,6 +14,7 @@ pipeline {
 
     stage('Test') {
       steps {
+        
         sh 'python test_app.py'
       }
     }
@@ -20,7 +22,7 @@ pipeline {
     stage('Deploy')
     {
       steps {
-        sh "pip install -r requirements.txt"
+        
         echo "deploying the application"
         sh "pwd"
         sh "hostname"
