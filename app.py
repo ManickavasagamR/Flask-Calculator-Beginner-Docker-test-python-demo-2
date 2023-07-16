@@ -14,7 +14,7 @@ api.add_resource(Divide, "/division")
 
 @app.route('/')
 def hello_world():
-    return "Hello World! from manik server"
+    return "Hello World! from manik ec2"
 
 
 if __name__=="__main__":
