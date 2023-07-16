@@ -22,6 +22,8 @@ pipeline {
     {
       steps {
         echo "deploying the application"
+        sh "nohup python app.py > log.txt 2>&1 &"
+        echo "Flask Application Up and running!!"
       }
     }
 
@@ -34,8 +36,7 @@ pipeline {
         }
         success {
             
-            sh "sudo nohup python3 app.py > log.txt 2>&1 &"
-            echo "Flask Application Up and running!!"
+            echo "app depployment successful"
         }
         failure {
             echo 'Build stage failed'
